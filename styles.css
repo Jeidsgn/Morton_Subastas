@@ -30,12 +30,12 @@
   --plotly-indigo: #3D5A80;
 
   /* Tipografía */
-  --font-heading: 'Minerva', 'minerva-modern', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Hanken Grotesk', 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-body: 'Hanken Grotesk', 'Open Sans', 'Arial', sans-serif;
 }
 
-/* Importar Minerva desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Minerva:wght@400;700&display=swap');
+/* Importar Hanken Grotesk desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 /* ============================================
    RESET Y BASE
