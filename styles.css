@@ -9,9 +9,12 @@
 
 :root {
   /* Colores corporativos Morton */
-  --morton-primary: #00453f; /* Solo para enlaces */
-  --morton-secondary: #00453f; /* Color consistente */
-  --morton-accent: #00453f; /* Color consistente */
+  --morton-primary: #00453f;
+  /* Solo para enlaces */
+  --morton-secondary: #00453f;
+  /* Color consistente */
+  --morton-accent: #00453f;
+  /* Color consistente */
   --morton-dark: #0a0a0a;
   --morton-light: #f5f5f5;
 
@@ -33,16 +36,14 @@
   --plotly-teal: #264653;
   --plotly-indigo: #3D5A80;
 
-  /* Tipografía */
-  --font-heading: 'Minerva', 'minerva-modern', 'Hanken Grotesk', sans-serif;
+  /* Tipografía - Prioridad: fuentes locales del repositorio */
+  --font-heading: 'MinervaModern Regular', 'MinervaModern Bold', sans-serif;
   --font-body: 'Hanken Grotesk', 'Open Sans', 'Arial', sans-serif;
+  --font-emphasis: 'MinervaModern Black', 'MinervaModern Bold';
+  /* Para palabras de énfasis */
 }
 
-/* Importar Minerva desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Minerva:wght@400;700&display=swap');
-
-/* Importar Hanken Grotesk desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap');
+/* Nota: Las fuentes MinervaModern se cargan desde fonts/index.css */
 
 /* ============================================
    RESET Y BASE
@@ -89,13 +90,21 @@ body {
 }
 
 .dashboard-header h1 {
-  font-family: 'Minerva', 'minerva-modern', var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-900);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+}
+
+/* Palabras de énfasis con <em> */
+.dashboard-header h1 em,
+.narrative-block h2 em,
+.chart-header h3 em {
+  font-family: var(--font-emphasis);
+  font-weight: 900;
 }
 
 .dashboard-header .subtitle {
@@ -167,12 +176,18 @@ body {
 }
 
 .narrative-block h2 {
-  font-family: 'Minerva', 'minerva-modern', var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-900);
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
+}
+
+/* Palabras de énfasis */
+.narrative-block h2 strong {
+  font-family: var(--font-emphasis);
+  font-weight: 900;
 }
 
 .narrative-block .narrative-text {
@@ -323,11 +338,17 @@ body {
 }
 
 .chart-header h3 {
-  font-family: 'Minerva', 'minerva-modern', var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--gray-800);
   letter-spacing: -0.01em;
+}
+
+/* Palabras de énfasis */
+.chart-header h3 strong {
+  font-family: var(--font-emphasis);
+  font-weight: 900;
 }
 
 .chart-card h3 {
