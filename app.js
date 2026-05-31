@@ -103,7 +103,7 @@
         source: Math.floor(Math.random() * 30) + 1,
         target: Math.floor(Math.random() * 30) + 1,
         weight: 0.3 + Math.random() * 0.7
-      })
+      }))
     },
 
     mediumDistribution: [
