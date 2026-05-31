@@ -1,0 +1,49 @@
+/* Minerva Modern - Fuentes locales */
+
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern/Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern/BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern/BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern/Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern/Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern/Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

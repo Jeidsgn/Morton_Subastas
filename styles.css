@@ -92,7 +92,7 @@ body {
   font-family: 'Minerva', 'minerva-modern', var(--font-heading);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--gray-100);
+  color: var(--gray-900);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
