@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morton Subastas - Dashboard de Subastas</title>
+
+  <!-- Cargar Plotly.js para gráficas interactivas -->
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <!-- Estilos visuales -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Fuente Hanken Grotesk desde CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Fuente Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Encabezado del Dashboard -->
+  <header class="dashboard-header">
+    <h1>Morton Subastas</h1>
+    <div class="subtitle">Análisis de Precios y Factores de Éxito en Subastas</div>
+    <div class="meta">
+      Dashboard público | Datos estáticos | Análisis estadístico y semántico
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Diapositiva 1: La Ilusión del Orden -->
+    <section class="slide">
+      <div class="slide-layout">
+
+        <!-- Bloque Narrativo -->
+        <div class="narrative-block">
+          <h2>La Ilusión del Orden</h2>
+          <div class="divider"></div>
+          <p class="narrative-text">
+            Comenzamos mostrando el panorama general de la subasta. Se presenta el gráfico de rangos de precios (Mínimo,
+            Máximo y Medio) ordenado de forma ascendente. El objetivo de esta diapositiva es demostrar que el
+            comportamiento de los lotes vendidos por encima del estimado (<em>Más</em>), por debajo (<em>Menos</em>) o
+            aquellos que fueron saboteados/cancelados (<em>Retirado</em>) no sigue un patrón lineal o evidente a simple
+            vista.
+          </p>
+          <p class="narrative-text">
+            Visualmente parece ruido caótico. Aquí lanzamos la pregunta conductora: <em>Si el valor económico de salida
+              no explica por qué una obra triunfa o se retira, ¿qué variables ocultas están gobernando realmente el
+              destino de la subasta?</em>
+          </p>
+
+          <!-- Tarjetas KPI -->
+          <div class="kpi-container">
+            <div class="kpi-card">
+              <div class="kpi-label">Tasa de Efectividad Global</div>
+              <div class="kpi-value">78<span class="kpi-unit">%</span></div>
+              <div class="kpi-description">Porcentaje de lotes adjudicados con éxito frente al total del catálogo</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Ratio de Desviación Base</div>
+              <div class="kpi-value">0.32<span class="kpi-unit">MxN</span></div>
+              <div class="kpi-description">Distancia promedio entre precios de salida fijados y valor de mercado</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Volumen Total en Riesgo</div>
+              <div class="kpi-value">15.75<span class="kpi-unit">M MxN</span></div>
+              <div class="kpi-description">Suma económica de precios de salida de lotes retirados</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor de Gráficas -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Distribución de Rangos de Precio</h3>
+            </div>
+            <div id="chart-price-ranges" class="plotly-graph"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Diapositiva 2: El Interior de la Caja Negra -->
+    <section class="slide">
+      <div class="slide-layout">
+
+        <!-- Bloque Narrativo -->
+        <div class="narrative-block">
+          <h2>El Interior de la Caja Negra</h2>
+          <div class="divider"></div>
+          <p class="narrative-text">
+            Respondemos inmediatamente a la pregunta anterior introduciendo el modelo de Machine Learning. En lugar de
+            mostrar la predicción directa, enseñamos las tripas del modelo a través de las fuerzas de decisión de
+            Shapley (SHAP Values).
+          </p>
+          <p class="narrative-text">
+            Esta diapositiva explica qué características físicas, temporales o de orden de catalogación empujan un lote
+            hacia el éxito o hacia el retiro. Es el puente perfecto porque pasa del caos visual de la diapositiva
+            anterior a las reglas matemáticas que el modelo descubrió detrás de la cortina.
+          </p>
+
+          <!-- Tarjetas KPI -->
+          <div class="kpi-container">
+            <div class="kpi-card">
+              <div class="kpi-label">Factor de Impacto Dominante</div>
+              <div class="kpi-value">Orden de Subasta</div>
+              <div class="kpi-description">Variable con mayor peso neto en la predicción de resultados</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Índice de Incertidumbre Predictiva</div>
+              <div class="kpi-value">0.42<span class="kpi-unit">σ</span></div>
+              <div class="kpi-description">Métrica estandarizada del error del modelo</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Sensibilidad al Catalogador</div>
+              <div class="kpi-value">0.18<span class="kpi-unit">pts</span></div>
+              <div class="kpi-description">Impacto incremental por posición física en el catálogo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor de Gráficas -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Importancia de Variables SHAP</h3>
+            </div>
+            <div id="chart-shap-values" class="plotly-graph"></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Forces Plot de Shapley</h3>
+            </div>
+            <div id="chart-shap-forces" class="plotly-graph"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Diapositiva 3: El Espacio Semántico -->
+    <section class="slide">
+      <div class="slide-layout">
+
+        <!-- Bloque Narrativo -->
+        <div class="narrative-block">
+          <h2>El Espacio Semántico</h2>
+          <div class="divider"></div>
+          <p class="narrative-text">
+            Una vez que sabemos <em>qué</em> variables importan gracias a SHAP, aislamos una de las más complejas: la
+            descripción curatorial y el lenguaje escrito. Mostramos el gráfico de residuales estandarizados de la
+            contingencia para demostrar cómo los tópicos latentes (los conceptos visuales extraídos del texto)
+            correlacionan directamente con el éxito comercial.
+          </p>
+          <p class="narrative-text">
+            Aquí el usuario comprende que el arte abstracto, los paisajes o los retratos tradicionales tienen "fuerzas
+            de atracción" estadísticas distintas en el mercado de Morton.
+          </p>
+
+          <!-- Tarjetas KPI -->
+          <div class="kpi-container">
+            <div class="kpi-card">
+              <div class="kpi-label">Densidad Léxica Curatorial</div>
+              <div class="kpi-value">8.4<span class="kpi-unit"> palabras</span></div>
+              <div class="kpi-description">Promedio de palabras clave de alto valor estilístico por lote</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Tópico de Mayor Rendimiento</div>
+              <div class="kpi-value">Composición Abstraccionista</div>
+              <div class="kpi-description">Concepto semántico asociado con menor tasa de retiro</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Significancia Global (p-value)</div>
+              <div class="kpi-value">0.001<span class="kpi-unit">***</span></div>
+              <div class="kpi-description">Prueba Chi-cuadrado adaptada para lenguaje no técnico</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor de Gráficas -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Pesos de Tópicos Semánticos</h3>
+            </div>
+            <div id="chart-topic-weights" class="plotly-graph"></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Residuales Estandarizados por Tópico</h3>
+            </div>
+            <div id="chart-topic-residuals" class="plotly-graph"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Diapositiva 4: La Geometría del Objeto -->
+    <section class="slide">
+      <div class="slide-layout">
+
+        <!-- Bloque Narrativo -->
+        <div class="narrative-block">
+          <h2>La Geometría del Objeto</h2>
+          <div class="divider"></div>
+          <p class="narrative-text">
+            De la palabra pasamos a la materia pura. Esta diapositiva presenta el espacio métrico euclidiano de las
+            obras reducido a tres dimensiones mediante UMAP. Aquí agrupamos los lotes exclusivamente por sus
+            características numéricas e intrínsecas: dimensiones (X, Y, Z), volumen físico, año de nacimiento y muerte
+            del autor, y precios de reserva.
+          </p>
+          <p class="narrative-text">
+            Al rotar el gráfico tridimensional, el usuario puede observar "nubes" o conglomerados naturales de obras que
+            comparten proporciones físicas similares, revelando si los formatos monumentales o las obras históricas se
+            segregan del resto del catálogo.
+          </p>
+
+          <!-- Tarjetas KPI -->
+          <div class="kpi-container">
+            <div class="kpi-card">
+              <div class="kpi-label">Índice de Compactación Espacial</div>
+              <div class="kpi-value">0.67<span class="kpi-unit">Índice</span></div>
+              <div class="kpi-description">Medida de agrupamiento de obras estéticamente similares</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Volumen Físico Mediano</div>
+              <div class="kpi-value">45.000<span class="kpi-unit"> cm³</span></div>
+              <div class="kpi-description">Tamaño tridimensional promedio del lote estándar</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Anomalía Dimensional</div>
+              <div class="kpi-value">12<span class="kpi-unit"> lotes</span></div>
+              <div class="kpi-description">Lotes extremos que rompen los estándares de empaque</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor de Gráficas -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>UMAP 3D - Reducción Dimensional</h3>
+            </div>
+            <div id="chart-umap-3d" class="plotly-graph"></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Distribución por Tamaño de Formato</h3>
+            </div>
+            <div id="chart-format-size" class="plotly-graph"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Diapositiva 5: La Red de Afinidades -->
+    <section class="slide">
+      <div class="slide-layout">
+
+        <!-- Bloque Narrativo -->
+        <div class="narrative-block">
+          <h2>La Red de Afinidades Categóricas</h2>
+          <div class="divider"></div>
+          <p class="narrative-text">
+            Concluimos la presentación con la estructura relacional más avanzada: el grafo topológico KNN. Aquí las
+            obras ya no se ordenan por su precio ni por su tamaño en un plano cartesiano; se conectan mediante
+            filamentos invisibles basados en sus coincidencias categóricas (mismo medio, mismo soporte, procedencia,
+            escuela artística y estatus del artista).
+          </p>
+          <p class="narrative-text">
+            El usuario interactúa con una red de fuerzas vivas donde los lotes centrales actúan como los "pilares
+            institucionales" de la subasta, mientras que los nodos periféricos representan las piezas singulares o
+            exóticas de la colección. Es el clímax visual de la presentación.
+          </p>
+
+          <!-- Tarjetas KPI -->
+          <div class="kpi-container">
+            <div class="kpi-card">
+              <div class="kpi-label">Centralidad de Proximidad Media</div>
+              <div class="kpi-value">0.84<span class="kpi-unit">Índice</span></div>
+              <div class="kpi-description">Grado de interconectividad del catálogo</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Hub Estructural del Catálogo</div>
+              <div class="kpi-value">Lote 047 - Frida Kahlo</div>
+              <div class="kpi-description">Conector principal de la red de afinidades</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Coeficiente de Agrupamiento Material</div>
+              <div class="kpi-value">0.72<span class="kpi-unit">Cohesión</span></div>
+              <div class="kpi-description">Lealtad de los soportes técnicos en la estructura de mercado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor de Gráficas -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Red de Afinidades KNN</h3>
+            </div>
+            <div id="chart-knn-network" class="plotly-graph"></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Distribución por Medios Artísticos</h3>
+            </div>
+            <div id="chart-medium-types" class="plotly-graph"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="dashboard-footer">
+    <p>
+      <strong>Morton Subastas</strong> | Análisis Avanzado de Subastas de Arte Contemporáneo
+    </p>
+    <p>
+      Este dashboard utiliza análisis de Machine Learning, procesamiento de lenguaje natural (BERTopic) y reducción
+      dimensional (UMAP).
+    </p>
+    <p>
+      <a href="https://github.com/MortonGallery">GitHub Repository</a> |
+      <a href="#">Documentación Técnica</a>
+    </p>
+  </footer>
+
+  <!-- Script principal del dashboard -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
