@@ -1,8 +1,9 @@
 /* Minerva Modern - Fuentes locales */
 
+/* Definiciones de fuente - Black (900) */
 @font-face {
   font-family: 'Minerva Modern';
-  src: url('MinervaModern/Black.ttf') format('truetype');
+  src: url('MinervaModern Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -10,15 +11,16 @@
 
 @font-face {
   font-family: 'Minerva Modern';
-  src: url('MinervaModern/BlackItalic.ttf') format('truetype');
+  src: url('MinervaModern BlackItalic.ttf') format('truetype');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 
+/* Bold (700) */
 @font-face {
   font-family: 'Minerva Modern';
-  src: url('MinervaModern/BoldItalic.ttf') format('truetype');
+  src: url('MinervaModern BoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -26,24 +28,118 @@
 
 @font-face {
   font-family: 'Minerva Modern';
-  src: url('MinervaModern/Bold.ttf') format('truetype');
+  src: url('MinervaModern Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
+/* Regular/Normal (400) */
 @font-face {
   font-family: 'Minerva Modern';
-  src: url('MinervaModern/Italic.ttf') format('truetype');
+  src: url('MinervaModern Regular.ttf') format('truetype');
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Minerva Modern';
-  src: url('MinervaModern/Bold.ttf') format('truetype');
+  src: url('MinervaModern Italic.ttf') format('truetype');
   font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light (300) */
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern Light.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'Minerva Modern';
+  src: url('MinervaModern Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===========================================================
+   ESTILOS DEL DASHBOARD
+   =========================================================== */
+
+/* Tipografía general del dashboard */
+body {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Títulos y encabezados del dashboard */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  color: #00453F;
+  margin-top: 0;
+}
+
+/* Títulos de las diapositivas */
+.slide {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Botones */
+.btn {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* Navegación */
+.nav {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* Etiquetas de gráfico */
+.chart-label,
+.axis-label {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Títulos de gráficos */
+.recharts-text,
+.recharts-tooltip-item {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Leyendas de gráficos */
+.legend-item-text {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* Títulos de páginas */
+.page-title {
+  font-family: 'Minerva Modern', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  color: #00453F;
 }
