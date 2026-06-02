@@ -124,6 +124,22 @@ body {
 /* ============================================
    SECCIÓN DE DIAPOSITIVA
    ============================================ */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  /* Define la proporción que mejor se ajuste a tus gráficos */
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 .slide {
   background: #FFFFFF;
