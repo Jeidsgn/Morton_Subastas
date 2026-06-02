@@ -25,9 +25,9 @@
   <!-- Encabezado del Dashboard -->
   <header class="dashboard-header">
     <h1>Morton Subastas</h1>
-    <div class="subtitle">Análisis de Precios y Factores de Éxito en Subasta 28.5.26</div>
+    <div class="subtitle">Estudio de Subasta 28.5.26</div>
     <div class="meta">
-      Dashboard público | Datos estáticos | Análisis estadístico y semántico
+      Dashboard público | Datos estáticos
     </div>
   </header>
 
@@ -39,7 +39,7 @@
 
         <!-- Bloque Narrativo -->
         <div class="narrative-block">
-          <h2>Estudio Estructural de Precios</h2>
+          <h2>Análisisl de Precios</h2>
           <div class="divider"></div>
           <p class="narrative-text">
             Comenzamos mostrando el panorama general de la subasta. Se presenta el gráfico de rangos de precios ordenado
@@ -106,7 +106,7 @@
 
         <!-- Bloque Narrativo -->
         <div class="narrative-block">
-          <h2>El Espacio Semántico</h2>
+          <h2>Semántica de procedencia</h2>
           <div class="divider"></div>
           <p class="narrative-text">
             Aislamos una de las más complejas variables: <em>la descripción curatorial y el lenguaje escrito</em>. Se
@@ -141,7 +141,7 @@
             <div class="kpi-card">
               <div class="kpi-label">Tasa de Singularidad Curatorial</div>
               <div class="kpi-value">34.1<span class="kpi-unit">%</span></div>
-              <div class="kpi-description">Porcentaje de lotes con historias de procedencia altamente atípicas.
+              <div class="kpi-description">Porcentaje de lotes con historias muy singulares.
                 (Outliers > 30% : Alta complejidad). El catálogo es idiosincrásico.</div>
             </div>
             <div class="kpi-card">
@@ -193,38 +193,42 @@
 
         <!-- Bloque Narrativo -->
         <div class="narrative-block">
-          <h2>La Geometría del Objeto</h2>
+          <h2>Análisis Numérico</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            De la palabra pasamos a la materia pura. Esta diapositiva presenta el espacio métrico euclidiano de las
-            obras reducido a tres dimensiones mediante UMAP. Aquí agrupamos los lotes exclusivamente por sus
-            características numéricas e intrínsecas: dimensiones (X, Y, Z), volumen físico, año de nacimiento y muerte
-            del autor, y precios de reserva.
+            Para el mercado del arte, los promedios normales no sirven porque una sola obra maestra de un millón de
+            dólares distorsiona todo. Se usó un método (Spearman) que ignora esos "gritos" del mercado. En su lugar, se
+            realiza un análisis de jerarquías, no de valores absolutos.
           </p>
           <p class="narrative-text">
-            Al rotar el gráfico tridimensional, el usuario puede observar "nubes" o conglomerados naturales de obras que
-            comparten proporciones físicas similares, revelando si los formatos monumentales o las obras históricas se
-            segregan del resto del catálogo.
+            El cruce entre el Precio de salida y el Año de Nacimiento es de
+            apenas -0.15. No existe una regla que diga que los artistas más clásicos generan ventas más altas que los
+            contemporáneos, o viceversa.
+          </p>
+          <p class="narrative-text">
+            El cruce entre Precio Medio (el valor histórico estimado) y el Precio de Salida es casi perfecto. Esto
+            demuestra que la estrategia de la casa de subastas se rige con la
+            respuesta del mercado.
           </p>
 
           <!-- Tarjetas KPI -->
           <div class="kpi-container">
             <div class="kpi-card">
-              <div class="kpi-label">Índice de Compactación Espacial</div>
-              <div class="kpi-value">0.67<span class="kpi-unit">Índice</span></div>
-              <div class="kpi-description">Medida de agrupamiento de obras estéticamente similares</div>
+              <div class="kpi-label">Correlación Precio de Salida y Precio Medio</div>
+              <div class="kpi-value">0.93<span class="kpi-unit">ρ</span></div>
+              <div class="kpi-description">Fuerte correlación entre el precio estimado y el precio de venta</div>
             </div>
 
             <div class="kpi-card">
-              <div class="kpi-label">Volumen Físico Mediano</div>
-              <div class="kpi-value">45.000<span class="kpi-unit"> cm³</span></div>
-              <div class="kpi-description">Tamaño tridimensional promedio del lote estándar</div>
+              <div class="kpi-label">Correlación Año de Nacimiento y Precio de Salida</div>
+              <div class="kpi-value">-0.15<span class="kpi-unit">ρ</span></div>
+              <div class="kpi-description">Correlación casi nula entre el año de nacimiento y el precio de venta</div>
             </div>
 
             <div class="kpi-card">
-              <div class="kpi-label">Anomalía Dimensional</div>
-              <div class="kpi-value">12<span class="kpi-unit"> lotes</span></div>
-              <div class="kpi-description">Lotes extremos que rompen los estándares de empaque</div>
+              <div class="kpi-label">Correlación Volumen y Año de Nacimiento</div>
+              <div class="kpi-value">0.5<span class="kpi-unit">ρ</span></div>
+              <div class="kpi-description">Correlación casi media entre el volumen y el año de nacimiento</div>
             </div>
           </div>
         </div>
@@ -233,16 +237,23 @@
         <div class="charts-container">
           <div class="chart-card">
             <div class="chart-header">
-              <h3>UMAP 3D - Reducción Dimensional</h3>
+              <h3>Coeficiente de Spearman</h3>
             </div>
             <div id="chart-umap-3d" class="plotly-graph"></div>
           </div>
 
           <div class="chart-card">
             <div class="chart-header">
-              <h3>Distribución por Tamaño de Formato</h3>
+              <h3>Correlaciones Numéricas</h3>
+              <button onclick="this.closest('.chart-card').querySelector('iframe').requestFullscreen()"
+                style="align-self:flex-end;margin-left:auto;padding:6px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;background:rgba(255,255,255,0.07);color:#00453f;cursor:pointer;font-size:13px;transition:all 0.2s"
+                onmouseover="this.style.background='rgba(255,255,255,0.14)';this.style.color='#fff'"
+                onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.color='#ccc'">⛶ Pantalla
+                completa</button>
             </div>
-            <div id="chart-format-size" class="plotly-graph"></div>
+            <div class="iframe-container">
+              <iframe src="correlación_numérica.html" title="Espacio semántico"></iframe>
+            </div>
           </div>
         </div>
 
