@@ -208,9 +208,9 @@ body {
 
 /* Línea vertical decorativa */
 .narrative-block .divider {
-  width: 2px;
-  height: 60px;
-  background: linear-gradient(180deg,
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg,
       var(--morton-primary) 0%,
       transparent 100%);
   margin: 1.5rem 0;
