@@ -237,13 +237,6 @@
         <div class="charts-container">
           <div class="chart-card">
             <div class="chart-header">
-              <h3>Coeficiente de Spearman</h3>
-            </div>
-            <div id="chart-umap-3d" class="plotly-graph"></div>
-          </div>
-
-          <div class="chart-card">
-            <div class="chart-header">
               <h3>Correlaciones Numéricas</h3>
               <button onclick="this.closest('.chart-card').querySelector('iframe').requestFullscreen()"
                 style="align-self:flex-end;margin-left:auto;padding:6px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;background:rgba(255,255,255,0.07);color:#00453f;cursor:pointer;font-size:13px;transition:all 0.2s"
@@ -269,53 +262,58 @@
           <h2>La Red de Afinidades Categóricas</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Concluimos la presentación con la estructura relacional más avanzada: el grafo topológico KNN. Aquí las
-            obras ya no se ordenan por su precio ni por su tamaño en un plano cartesiano; se conectan mediante
-            filamentos invisibles basados en sus coincidencias categóricas (mismo medio, mismo soporte, procedencia,
-            escuela artística y estatus del artista).
+            Aquí los lotes se conectan mediante sus coincidencias categóricas (mismo medio, mismo soporte, artista).
           </p>
           <p class="narrative-text">
-            El usuario interactúa con una red de fuerzas vivas donde los lotes centrales actúan como los "pilares
-            institucionales" de la subasta, mientras que los nodos periféricos representan las piezas singulares o
-            exóticas de la colección. Es el clímax visual de la presentación.
+            Soportes tradicionales como la tela o medios masivos como el óleo presentan valores sumamente bajos y
+            coeficientes
+            cercanos a la neutralidad. Esto significa que la simple presencia de óleo o tela no altera las
+            probabilidades de éxito comercial en sala.
           </p>
+          <p class="narrative-text">
+            Sin embargo, emergen excepciones críticas con significancia estadística real (p < 0.05): La Tinta muestra
+              una fuerte asociación con el estatus Más. La Acuarela presenta un comportamiento similar. El modelo
+              refleja aquí que la demanda responde con dinamismo a estas piezas porque la relación entre el precio de
+              salida y el riesgo percibido por el comprador está optimizada.</p>
+              <!-- Tarjetas KPI -->
+              <div class="kpi-container">
+                <div class="kpi-card">
+                  <div class="kpi-label">Irrelevancia del Estándar (Centralidad)</div>
+                  <div class="kpi-value">0.02<span class="kpi-unit">Corr</span></div>
+                  <div class="kpi-description">Correlación casi nula. Ser técnicamente "común" en el catálogo no
+                    impulsa el valor; la singularidad sí.</div>
+                </div>
 
-          <!-- Tarjetas KPI -->
-          <div class="kpi-container">
-            <div class="kpi-card">
-              <div class="kpi-label">Centralidad de Proximidad Media</div>
-              <div class="kpi-value">0.84<span class="kpi-unit">Índice</span></div>
-              <div class="kpi-description">Grado de interconectividad del catálogo</div>
-            </div>
+                <div class="kpi-card">
+                  <div class="kpi-label">El Impulsor del Dibujo (Tinta)</div>
+                  <div class="kpi-value">4.18<span class="kpi-unit">x</span></div>
+                  <div class="kpi-description">Las obras que utilizan "Tinta" tienen x veces más probabilidades de
+                    superar su precio estimado en comparación con las que no la usan.</div>
+                </div>
 
-            <div class="kpi-card">
-              <div class="kpi-label">Hub Estructural del Catálogo</div>
-              <div class="kpi-value">Lote 047 - Frida Kahlo</div>
-              <div class="kpi-description">Conector principal de la red de afinidades</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-label">Coeficiente de Agrupamiento Material</div>
-              <div class="kpi-value">0.72<span class="kpi-unit">Cohesión</span></div>
-              <div class="kpi-description">Lealtad de los soportes técnicos en la estructura de mercado</div>
-            </div>
-          </div>
+                <div class="kpi-card">
+                  <div class="kpi-label">Premio de Clausura (Fallecidos)</div>
+                  <div class="kpi-value">4.03<span class="kpi-unit">x</span></div>
+                  <div class="kpi-description">Las obras de artistas fallecidos tienen x veces más probabilidades de
+                    superar su precio estimado en comparación con las de artistas vivos.</div>
+                </div>
+              </div>
         </div>
 
         <!-- Contenedor de Gráficas -->
         <div class="charts-container">
           <div class="chart-card">
             <div class="chart-header">
-              <h3>Red de Afinidades KNN</h3>
+              <h3>Grafo atributos categóricos</h3>
+              <button onclick="this.closest('.chart-card').querySelector('iframe').requestFullscreen()"
+                style="align-self:flex-end;margin-left:auto;padding:6px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;background:rgba(255,255,255,0.07);color:#00453f;cursor:pointer;font-size:13px;transition:all 0.2s"
+                onmouseover="this.style.background='rgba(255,255,255,0.14)';this.style.color='#fff'"
+                onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.color='#ccc'">⛶ Pantalla
+                completa</button>
             </div>
-            <div id="chart-knn-network" class="plotly-graph"></div>
-          </div>
-
-          <div class="chart-card">
-            <div class="chart-header">
-              <h3>Distribución por Medios Artísticos</h3>
+            <div class="iframe-container">
+              <iframe src="interactive_lots_graph.html" title="Grafo categórico"></iframe>
             </div>
-            <div id="chart-medium-types" class="plotly-graph"></div>
           </div>
         </div>
 
@@ -331,35 +329,55 @@
           <h2>El Interior de la Caja Negra</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Respondemos inmediatamente a la pregunta anterior introduciendo el modelo de Machine Learning. En lugar de
-            mostrar la predicción directa, enseñamos las tripas del modelo a través de las fuerzas de decisión de
-            Shapley (SHAP Values).
+            Separar el análisis en dos modelos nos permite aislar el "factor de venta" (se vende o no) del "factor de
+            precio" (se vende por arriba o por debajo del precio estimado):
           </p>
           <p class="narrative-text">
-            Esta diapositiva explica qué características físicas, temporales o de orden de catalogación empujan un lote
-            hacia el éxito o hacia el retiro. Es el puente perfecto porque pasa del caos visual de la diapositiva
-            anterior a las reglas matemáticas que el modelo descubrió detrás de la cortina.
+            Modelo I (Riesgo de Retiro): Funciona como un "filtro de venta". Su objetivo es identificarsi existen
+            caracteristicas que promueven la venta o retiro de un lote.
+          </p>
+          <p class="narrative-text">
+            Modelo II (Sobrepuja): Detectar qué atributos actúan como catalizadores de entusiasmo. Permitiéndonos
+            entender qué características atraen a los coleccionistas.
+          </p>
+          <p class="narrative-text">
+            Mientras que el nombre del artista asegura que la obra no se quede en bodega, es la procedencia/significado
+            (capturada por el impacto semántico) la que realmente genera la competencia y la sobrepuja.
+          </p>
+          <p class="narrative-text">
+            Observamos que el precio_medio tiene una influencia mucho mayor en la probabilidad de sobrepuja que en el
+            riesgo de retiro.
           </p>
 
           <!-- Tarjetas KPI -->
           <div class="kpi-container">
             <div class="kpi-card">
-              <div class="kpi-label">Factor de Impacto Dominante</div>
-              <div class="kpi-value">Orden de Subasta</div>
+              <div class="kpi-label">Factor de Venta Dominante</div>
+              <div class="kpi-value">Nombre del Artista</div>
               <div class="kpi-description">Variable con mayor peso neto en la predicción de resultados</div>
             </div>
 
             <div class="kpi-card">
-              <div class="kpi-label">Índice de Incertidumbre Predictiva</div>
-              <div class="kpi-value">0.42<span class="kpi-unit">σ</span></div>
-              <div class="kpi-description">Métrica estandarizada del error del modelo</div>
+              <div class="kpi-label">Factor de Sobrepuja Dominante</div>
+              <div class="kpi-value">Impacto Semántico</div>
+              <div class="kpi-description">Variable con mayor peso neto en la predicción de resultados</div>
             </div>
 
             <div class="kpi-card">
-              <div class="kpi-label">Sensibilidad al Catalogador</div>
-              <div class="kpi-value">0.18<span class="kpi-unit">pts</span></div>
-              <div class="kpi-description">Impacto incremental por posición física en el catálogo</div>
+              <div class="kpi-label">Precisión Modelo I</div>
+              <div class="kpi-value">0.88<span class="kpi-unit">Accuracy CV</span></div>
+              <div class="kpi-value">0.09<span class="kpi-unit">Std Dev CV</span></div>
+              <div class="kpi-description">Confirma que los criterios de rechazo son coherentes.</div>
             </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">Precisión Modelo II</div>
+              <div class="kpi-value">0.64<span class="kpi-unit">Accuracy CV</span></div>
+              <div class="kpi-value">0.15<span class="kpi-unit">Std Dev CV</span></div>
+              <div class="kpi-description">Refleja la esencia del arte: la mayor volatilidad es inherente al deseo
+                humano.</div>
+            </div>
+
           </div>
         </div>
 
@@ -367,21 +385,45 @@
         <div class="charts-container">
           <div class="chart-card">
             <div class="chart-header">
-              <h3>Importancia de Variables SHAP</h3>
+              <h3>Modelo de Venta/Retiro</h3>
+              <button onclick="this.closest('.chart-card').querySelector('iframe').requestFullscreen()"
+                style="align-self:flex-end;margin-left:auto;padding:6px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;background:rgba(255,255,255,0.07);color:#00453f;cursor:pointer;font-size:13px;transition:all 0.2s"
+                onmouseover="this.style.background='rgba(255,255,255,0.14)';this.style.color='#fff'"
+                onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.color='#ccc'">⛶ Pantalla
+                completa</button>
             </div>
-
+            <div class="iframe-container">
+              <iframe src="Modelo_Venta.html" title="Grafo categórico"></iframe>
+            </div>
           </div>
-
+        </div>
+        <div class="charts-container">
           <div class="chart-card">
             <div class="chart-header">
-              <h3>Forces Plot de Shapley</h3>
+              <h3>Modelo de Precio Más/Menos</h3>
+              <button onclick="this.closest('.chart-card').querySelector('iframe').requestFullscreen()"
+                style="align-self:flex-end;margin-left:auto;padding:6px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;background:rgba(255,255,255,0.07);color:#00453f;cursor:pointer;font-size:13px;transition:all 0.2s"
+                onmouseover="this.style.background='rgba(255,255,255,0.14)';this.style.color='#fff'"
+                onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.color='#ccc'">⛶ Pantalla
+                completa</button>
             </div>
-            <div id="chart-shap-forces" class="plotly-graph"></div>
+            <div class="iframe-container">
+              <iframe src="Modelo_Precio.html" title="Grafo categórico"></iframe>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
+    <div class="slide-layout">
+      <Div class="narrative-block">
+        <h2>La Interpretación de los Resultados</h2>
+        <p>
+          Los modelos de clasificsación (vender/no vender, sobrepuja/sin sobrepuja) nos dan una visión binaria, pero el
+          verdadero poder de ML radica en interpretar las decisiones de la caja negra.
+        </p>
+      </Div>
+    </div>
 
   </main>
 
@@ -391,8 +433,10 @@
       Análisis Avanzado de Subastas de Arte Contemporáneo
     </p>
     <p>
-      Este dashboard utiliza análisis de Machine Learning, procesamiento de lenguaje natural (BERTopic) y reducción
-      dimensional (UMAP).
+      El descubrimiento más valioso es que la tecnología no sustituye al ojo del experto, sino que le proporciona un
+      mapa donde ver qué elementos están realmente impulsando sus resultados, permitiéndoles iterar y refinar su
+      estrategia
+      en cada subasta con una base de evidencia que antes era meramente intuitiva.
     </p>
     <p>
       <a href="https://github.com/Jeidsgn/Morton_Subastas">GitHub Repository</a>
