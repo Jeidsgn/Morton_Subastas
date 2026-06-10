@@ -415,7 +415,7 @@ body {
 
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .dashboard-header h1 {
@@ -423,11 +423,41 @@ body {
   }
 
   .slide {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .chart-card {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .iframe-container {
+    aspect-ratio: 1 / 1; /* Proporción cuadrada en móviles para mayor espacio vertical */
   }
 
   .kpi-card .kpi-value {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .slide {
+    padding: 1rem 0.75rem;
+  }
+
+  .chart-card {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .iframe-container {
+    aspect-ratio: 4 / 5; /* Formato vertical (más alto que ancho) en pantallas muy angostas */
+  }
+
+  .kpi-card {
+    padding: 0.75rem;
   }
 }
 

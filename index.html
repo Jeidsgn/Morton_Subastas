@@ -33,6 +33,33 @@
 
   <main class="container">
 
+    <!-- Abstract Comercial / Caso de Estudio -->
+    <section class="slide">
+      <div class="slide-layout" style="grid-template-columns: 1fr;">
+        <div class="narrative-block" style="padding-right: 0;">
+          <h2>Caso de Estudio &amp; Abstract Comercial</h2>
+          <div class="subtitle"
+            style="font-size: 0.95rem; color: var(--morton-primary); margin-bottom: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase;">
+            Inteligencia de Datos y Machine Learning en el Mercado del Arte
+          </div>
+          <div class="divider"></div>
+          <p class="narrative-text" style="font-size: 1rem; line-height: 1.9; font-weight: 400;">
+            Este dashboard interactivo representa un caso de estudio diseñado para ilustrar cómo la ciencia de datos y
+            el aprendizaje automático (Machine Learning) optimizan la toma de decisiones comerciales y la gestión de
+            riesgos en casas de subastas. A través de la combinación de análisis de precios, procesamiento de lenguaje
+            natural (NLP) para evaluar descripciones curatoriales (BERTopic), reducción de dimensionalidad (UMAP) y
+            teoría de grafos (KNN), demostramos cómo es posible auditar de forma científica el rendimiento de un
+            catálogo de arte contemporáneo.
+          </p>
+          <p class="narrative-text" style="font-size: 1rem; line-height: 1.9; font-weight: 400;">
+            El objetivo de este caso de estudio es mostrar cómo la tecnología proporciona herramientas analíticas para
+            entender el porqué del comportamiento de los lotes en sala, mitigando el riesgo de piezas desiertas y
+            maximizando el valor de salida en sala antes del primer martillazo.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Diapositiva 1: Estudio Estructural de Precios -->
     <section class="slide">
       <div class="slide-layout">
@@ -49,8 +76,10 @@
             vista.
           </p>
           <p class="narrative-text">
-            Al comparar que tenemos casi 25 millones de pesos en lotes vendidos frente a una estimación teórica de más
-            de 50 millones en el catálogo total, identificamos que los lotes que no encontraron comprador, afectaron
+            Al comparar que tenemos casi 25 millones MXN (<em>$1'4 USD</em>) en lotes vendidos frente a una estimación
+            teórica de más
+            de 50 millones MXN (<em>$2'8 USD</em>) en el catálogo total, identificamos que los lotes que no encontraron
+            comprador, afectaron
             el potencial de ingresos de la subasta.
           </p>
           <p class="narrative-text">
@@ -69,13 +98,14 @@
             <div class="kpi-card">
               <div class="kpi-label">Total Vendido</div>
               <div class="kpi-value">$ 24,9<span class="kpi-unit">MM mxn</span></div>
-              <div class="kpi-description">Total recaudado en la subasta</div>
+              <div class="kpi-description">Total recaudado en la subasta (<em>$1'4 USD</em>)</div>
             </div>
 
             <div class="kpi-card">
               <div class="kpi-label">Valor Estimado Total de Lotes Retirados</div>
               <div class="kpi-value">$ 24,3<span class="kpi-unit">MM mxn</span></div>
-              <div class="kpi-description">Suma económica de precios de salida de lotes retirados</div>
+              <div class="kpi-description">Suma económica de precios de salida de lotes retirados (<em>$1'4 USD</em>)
+              </div>
             </div>
           </div>
         </div>
@@ -115,7 +145,7 @@
             similitudes más allá de la coincidencia de palabras clave.
           </p>
           <p class="narrative-text">
-            La V de Cramér (0.34) confirma una asociación fuerte entre el ADN narrativo de una obra y su destino en la
+            La V de Cramér (38.1%) confirma una asociación fuerte entre el ADN narrativo de una obra y su destino en la
             sala de subastas. Es decir, la procedencia es una variable que se traduce en liquidez.
           </p>
           <p class="narrative-text">
@@ -201,14 +231,13 @@
             realiza un análisis de jerarquías, no de valores absolutos.
           </p>
           <p class="narrative-text">
-            El cruce entre el Precio de salida y el Año de Nacimiento es de
-            apenas -0.15. No existe una regla que diga que los artistas más clásicos generan ventas más altas que los
-            contemporáneos, o viceversa.
+            El cruce entre el Precio de salida y el Año de Nacimiento es de apenas -0.15. Los artistas más clásicos de
+            la subasta no necesariamente generon ventas más altas que los contemporáneos, o viceversa.
           </p>
           <p class="narrative-text">
             El cruce entre Precio Medio (el valor histórico estimado) y el Precio de Salida es casi perfecto. Esto
-            demuestra que la estrategia de la casa de subastas se rige con la
-            respuesta del mercado.
+            demuestra que la estrategia de la casa de subastas se ciñe a la respuesta del mercado con éxito (buen
+            ejercicio de tasación).
           </p>
 
           <!-- Tarjetas KPI -->
@@ -415,19 +444,75 @@
 
       </div>
     </section>
-    <div class="slide-layout">
-      <Div class="narrative-block">
-        <h2>La Interpretación de los Resultados</h2>
-        <p>
-          Casi el 40% del catálogo no generó valor, inmovilizando 24 millones de pesos. Para revertir esta fuga, sabemos
-          ahora que el prestigio del autor asegura la supervivencia técnica del lote, pero es la historia que lo
-          envuelve (el peso narrativo del Clúster 7) la que rompe el techo de la estimación, incluso superando el
-          impacto material, volumen, año de la pieza. La adopción de este proceso analítico permite mitigar el riesgo de
-          los lotes desiertos y comenzar a orquestar el deseo en la sala, alineando atributos para maximizar el ingreso
-          neto de cada martillazo.
-        </p>
-      </Div>
-    </div>
+    <!-- Conclusiones &amp; Estrategia Comercial (Caso de Estudio) -->
+    <section class="slide">
+      <div class="slide-layout">
+
+        <!-- Bloque Izquierdo: Interpretación de los Resultados -->
+        <div class="narrative-block">
+          <h2>Interpretación de Resultados</h2>
+          <div class="divider"></div>
+          <p class="narrative-text">
+            Casi el 40% del catálogo de esta subasta no generó valor directo en sala, inmovilizando más de 24 millones
+            de pesos en lotes no adjudicados. A través de este análisis profundo, comprendemos que aunque el prestigio
+            del autor asegura la supervivencia técnica de la pieza (evita su retiro), la verdadera fuerza impulsora que
+            rompe las estimaciones de los peritos y genera sobrepujas es el <strong>ADN narrativo de la obra</strong>
+            (representado por tópicos semánticos curados como el Clúster 7).
+          </p>
+          <p class="narrative-text">
+            La adopción de este modelo analítico e interpretativo no busca domesticar la impredecibilidad del arte, sino
+            mitigar sistemáticamente el riesgo de los lotes desiertos y comenzar a orquestar el deseo de los compradores
+            combinando variables físicas, temporales y semánticas de manera científica.
+          </p>
+        </div>
+
+        <!-- Bloque Derecho: Conclusiones y Call to Action -->
+        <div class="narrative-block">
+          <h2>Propuesta de Valor Comercial</h2>
+          <div class="divider"></div>
+
+          <div class="kpi-container">
+            <div class="kpi-card" style="border-left: 4px solid var(--morton-primary);">
+              <div class="kpi-label">1. Mitigación de Pérdidas por Retiro</div>
+              <div class="kpi-description" style="font-size: 0.85rem; color: var(--gray-700); margin-top: 0.2rem;">
+                Predicción de la probabilidad de venta con un 88% de precisión en fases previas a la catalogación
+                física, reduciendo costes de logística y catálogo.
+              </div>
+            </div>
+
+            <div class="kpi-card" style="border-left: 4px solid var(--morton-primary);">
+              <div class="kpi-label">2. Enriquecimiento Narrativo (NLP)</div>
+              <div class="kpi-description" style="font-size: 0.85rem; color: var(--gray-700); margin-top: 0.2rem;">
+                Detección automática de temas curatoriales que incrementan la disposición al pago del coleccionista,
+                adaptando la redacción técnica en base a datos históricos.
+              </div>
+            </div>
+
+            <div class="kpi-card" style="border-left: 4px solid var(--morton-primary);">
+              <div class="kpi-label">3. Tasación Optimizada por Formato</div>
+              <div class="kpi-description" style="font-size: 0.85rem; color: var(--gray-700); margin-top: 0.2rem;">
+                Ajuste fino de precios en función del volumen físico de las obras, previniendo la compresión de márgenes
+                típica de los formatos sobredimensionados.
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; padding: 1.5rem; background: var(--gray-100); border-radius: 4px;">
+            <h4
+              style="font-family: var(--font-heading); color: var(--gray-900); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.95rem;">
+              ¿Cómo aplicar esto en su organización?</h4>
+            <p style="font-size: 0.9rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 1rem;">
+              Desarrollamos e implementamos modelos a medida de analítica predictiva y procesamiento de lenguaje natural
+              integrados con sus bases de datos históricas de ventas.
+            </p>
+            <p style="font-size: 0.9rem; font-weight: 700; color: var(--morton-primary); margin-bottom: 0;">
+              Contáctenos para una demostración personalizada y auditoría inicial de sus datos.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
