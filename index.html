@@ -66,25 +66,23 @@
 
         <!-- Bloque Narrativo -->
         <div class="narrative-block">
-          <h2>Análisisl de Precios</h2>
+          <h2>Análisis de Precios</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Comenzamos mostrando el panorama general de la subasta. Se presenta el gráfico de rangos de precios ordenado
-            de forma ascendente. El objetivo de esta diapositiva es demostrar que el
-            comportamiento de los lotes vendidos por encima del estimado (<em>Más</em>), por debajo (<em>Menos</em>) o
-            aquellos que fueron saboteados/cancelados (<em>Retirado</em>) no sigue un patrón lineal o evidente a simple
-            vista.
+            Comenzamos con un retrato general de la subasta. El gráfico muestra la franja gris de expectativas teóricas
+            de precio (el mínimo y el máximo sugerido por los tasadores) frente al precio real pagado en sala (puntos
+            verdes). El destino de una obra —ya sea superando el estimado (<em>Más</em>), quedando por debajo
+            (<em>Menos</em>) o retirándose sin ofertas (líneas rojas)— no responde a una lógica lineal o evidente a
+            simple vista.
           </p>
           <p class="narrative-text">
-            Al comparar que tenemos casi 25 millones MXN (<em>$1'4 USD</em>) en lotes vendidos frente a una estimación
-            teórica de más
-            de 50 millones MXN (<em>$2'8 USD</em>) en el catálogo total, identificamos que los lotes que no encontraron
-            comprador, afectaron
-            el potencial de ingresos de la subasta.
+            El catálogo proyectaba una expectativa de más de 50 millones MXN (<em>$2.8M USD</em>) en valor estimado,
+            pero la recaudación real cerró en casi 25 millones MXN (<em>$1.4M USD</em>). Esta diferencia revela el
+            impacto comercial directo de los lotes desiertos y retirados en el potencial económico global.
           </p>
           <p class="narrative-text">
-            Visualmente parece ruido caótico. Aquí lanzamos la pregunta conductora: <em>¿existen variables ocultas que
-              están gobernando el destino de la subasta?</em>
+            Lo que a simple vista parece un comportamiento caótico del coleccionista nos plantea la gran pregunta de
+            investigación: <em>¿Qué fuerzas invisibles e intangibles están gobernando el éxito de cada martillazo?</em>
           </p>
 
           <!-- Tarjetas KPI -->
@@ -139,17 +137,19 @@
           <h2>Semántica de procedencia</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Aislamos una de las más complejas variables: <em>la descripción curatorial y el lenguaje escrito</em>. Se
-            usa BERT para transformar el texto de las descripciones en puntos de un espacio semántico, permitiendo
-            capturar
-            similitudes más allá de la coincidencia de palabras clave.
+            Aislamos la variable más abstracta y propia de la historia del arte: <em>el lenguaje curatorial y la
+              narrativa de procedencia</em>. Traducimos los textos descriptivos de cada ficha en un "mapa de conceptos"
+            (espacio semántico), capturando la esencia y similitud del relato curatorial más allá de simples palabras
+            clave.
           </p>
           <p class="narrative-text">
-            La V de Cramér (38.1%) confirma una asociación fuerte entre el ADN narrativo de una obra y su destino en la
-            sala de subastas. Es decir, la procedencia es una variable que se traduce en liquidez.
+            La estadística (V de Cramér del 38.1%) confirma que el "ADN narrativo" de una obra tiene una relación
+            directa con su éxito comercial en sala. En pocas palabras: una procedencia bien articulada y su historia
+            escrita se traducen en liquidez real.
           </p>
           <p class="narrative-text">
-            El modelo demuestra que ciertos clústeres temáticos (como el 7) actúan como aceleradores de valor.
+            El análisis identifica que ciertos grupos de historias afines (como el Clúster 7) actúan como potentes
+            imanes comerciales, impulsando y acelerando la valoración percibida por los compradores.
           </p>
 
           <!-- Tarjetas KPI -->
@@ -226,18 +226,19 @@
           <h2>Análisis Numérico</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Para el mercado del arte, los promedios normales no sirven porque una sola obra maestra de un millón de
-            dólares distorsiona todo. Se usó un método (Spearman) que ignora esos "gritos" del mercado. En su lugar, se
-            realiza un análisis de jerarquías, no de valores absolutos.
+            En el mercado del arte, los promedios tradicionales mienten porque el récord de una sola obra maestra
+            distorsiona toda la muestra. Para evitarlo, usamos un método estadístico (Spearman) que ignora los "gritos"
+            de precios astronómicos aislados y mide la jerarquía y consistencia real de las tendencias.
           </p>
           <p class="narrative-text">
-            El cruce entre el Precio de salida y el Año de Nacimiento es de apenas -0.15. Los artistas más clásicos de
-            la subasta no necesariamente generon ventas más altas que los contemporáneos, o viceversa.
+            Los datos revelan que la madurez histórica o edad del artista no dicta el precio de manera lineal: la
+            relación entre el año de nacimiento y el precio final de venta es casi nula (-0.15). Los creadores
+            consagrados del siglo XX y los contemporáneos compiten en igualdad de condiciones en sala.
           </p>
           <p class="narrative-text">
-            El cruce entre Precio Medio (el valor histórico estimado) y el Precio de Salida es casi perfecto. Esto
-            demuestra que la estrategia de la casa de subastas se ciñe a la respuesta del mercado con éxito (buen
-            ejercicio de tasación).
+            Por otro lado, la relación entre el precio promedio sugerido por los tasadores y el precio final de salida
+            es casi perfecta (0.93). Esto valida que la casa de subastas posee un ojo curatorial y técnico sumamente
+            calibrado con las expectativas de los coleccionistas.
           </p>
 
           <!-- Tarjetas KPI -->
@@ -291,42 +292,44 @@
           <h2>La Red de Afinidades Categóricas</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Aquí los lotes se conectan mediante sus coincidencias categóricas (mismo medio, mismo soporte, artista).
+            Representamos el catálogo como una <em>constelación de afinidades materiales</em>. Las obras se conectan
+            mediante filamentos invisibles si comparten soporte, medio técnico o época, revelando cómo se agrupan las
+            preferencias materiales del mercado.
           </p>
           <p class="narrative-text">
-            Soportes tradicionales como la tela o medios masivos como el óleo presentan valores sumamente bajos y
-            coeficientes
-            cercanos a la neutralidad. Esto significa que la simple presencia de óleo o tela no altera las
-            probabilidades de éxito comercial en sala.
+            Los medios y soportes tradicionales, como el óleo sobre lienzo, muestran una neutralidad comercial absoluta.
+            Esto significa que el mercado ya los asume como el estándar esperado; su sola presencia no garantiza por sí
+            misma una sobrepuja o un deseo extraordinario.
           </p>
           <p class="narrative-text">
-            Sin embargo, emergen excepciones críticas con significancia estadística real (p < 0.05): La Tinta muestra
-              una fuerte asociación con el estatus Más. La Acuarela presenta un comportamiento similar. El modelo
-              refleja aquí que la demanda responde con dinamismo a estas piezas porque la relación entre el precio de
-              salida y el riesgo percibido por el comprador está optimizada.</p>
-              <!-- Tarjetas KPI -->
-              <div class="kpi-container">
-                <div class="kpi-card">
-                  <div class="kpi-label">Irrelevancia del Estándar (Centralidad)</div>
-                  <div class="kpi-value">0.02<span class="kpi-unit">Corr</span></div>
-                  <div class="kpi-description">Correlación casi nula. Ser técnicamente "común" en el catálogo no
-                    impulsa el valor; la singularidad sí.</div>
-                </div>
+            No obstante, emergen técnicas con un atractivo comercial científicamente comprobado: la
+            <strong>Tinta</strong> y la <strong>Acuarela</strong> muestran una altísima probabilidad de superar los
+            estimados. El coleccionista percibe en estas piezas un equilibrio óptimo entre un precio de entrada
+            accesible y una gran singularidad artística, lo que desata la puja en sala.
+          </p>
+          <!-- Tarjetas KPI -->
+          <div class="kpi-container">
+            <div class="kpi-card">
+              <div class="kpi-label">Irrelevancia del Estándar (Centralidad)</div>
+              <div class="kpi-value">0.02<span class="kpi-unit">Corr</span></div>
+              <div class="kpi-description">Correlación casi nula. Ser técnicamente "común" en el catálogo no
+                impulsa el valor; la singularidad sí.</div>
+            </div>
 
-                <div class="kpi-card">
-                  <div class="kpi-label">El Impulsor del Dibujo (Tinta)</div>
-                  <div class="kpi-value">4.18<span class="kpi-unit">x</span></div>
-                  <div class="kpi-description">Las obras que utilizan "Tinta" tienen x veces más probabilidades de
-                    superar su precio estimado en comparación con las que no la usan.</div>
-                </div>
+            <div class="kpi-card">
+              <div class="kpi-label">El Impulsor del Dibujo (Tinta)</div>
+              <div class="kpi-value">4.18<span class="kpi-unit">x</span></div>
+              <div class="kpi-description">Las obras que utilizan "Tinta" tienen x veces más probabilidades de
+                superar su precio estimado en comparación con las que no la usan.</div>
+            </div>
 
-                <div class="kpi-card">
-                  <div class="kpi-label">Premio de Clausura (Fallecidos)</div>
-                  <div class="kpi-value">4.03<span class="kpi-unit">x</span></div>
-                  <div class="kpi-description">Las obras de artistas fallecidos tienen x veces más probabilidades de
-                    superar su precio estimado en comparación con las de artistas vivos.</div>
-                </div>
-              </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Premio de Clausura (Fallecidos)</div>
+              <div class="kpi-value">4.03<span class="kpi-unit">x</span></div>
+              <div class="kpi-description">Las obras de artistas fallecidos tienen x veces más probabilidades de
+                superar su precio estimado en comparación con las de artistas vivos.</div>
+            </div>
+          </div>
         </div>
 
         <!-- Contenedor de Gráficas -->
@@ -358,24 +361,23 @@
           <h2>El Interior de la Caja Negra</h2>
           <div class="divider"></div>
           <p class="narrative-text">
-            Separar el análisis en dos modelos nos permite aislar el "factor de venta" (se vende o no) del "factor de
-            precio" (se vende por arriba o por debajo del precio estimado):
+            Desarmamos la complejidad matemática dividiendo la inteligencia predictiva en dos miradas complementarias
+            que explican la psicología del mercado:
           </p>
           <p class="narrative-text">
-            Modelo I (Riesgo de Retiro): Funciona como un "filtro de venta". Su objetivo es identificarsi existen
-            caracteristicas que promueven la venta o retiro de un lote.
+            <strong>Modelo I (Filtro de Venta - El Seguro contra el Olvido):</strong> Examina qué factores aseguran que
+            una pieza se venda y no se quede en bodega. El nombre y prestigio del artista actúa aquí como el mayor
+            escudo de protección contra el retiro del lote.
           </p>
           <p class="narrative-text">
-            Modelo II (Sobrepuja): Detectar qué atributos actúan como catalizadores de entusiasmo. Permitiéndonos
-            entender qué características atraen a los coleccionistas.
+            <strong>Modelo II (Catalizador de Entusiasmo - El Motor de Sobrepuja):</strong> Detecta qué características
+            encienden la pasión en la sala y empujan a los coleccionistas a pagar más de lo estimado. Aquí el gran
+            ganador es el peso narrativo de la procedencia.
           </p>
           <p class="narrative-text">
-            Mientras que el nombre del artista asegura que la obra no se quede en bodega, es la procedencia/significado
-            (capturada por el impacto semántico) la que realmente genera la competencia y la sobrepuja.
-          </p>
-          <p class="narrative-text">
-            Observamos que el precio_medio tiene una influencia mucho mayor en la probabilidad de sobrepuja que en el
-            riesgo de retiro.
+            En resumen: la firma del artista garantiza la transacción comercial básica, pero es <em>la fuerza de la
+              historia que acompaña a la obra (el impacto semántico)</em> la que realmente desata la puja competitiva y
+            rompe los techos de precio en sala.
           </p>
 
           <!-- Tarjetas KPI -->
